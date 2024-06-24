@@ -26,7 +26,7 @@ class _HomeStageState extends State<HomeStage> {
                 width: 30.0,
               ),
               const SizedBox(width: 10.0),
-              const Text('English')
+              const Text('Spanish')
             ],
           ),
         ],
