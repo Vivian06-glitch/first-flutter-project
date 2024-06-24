@@ -65,7 +65,7 @@ class _HomeTabState extends State<HomeTab> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
             const Row(
               children: [
