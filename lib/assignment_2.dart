@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'course_widget.dart';
+
 class HomeStage extends StatefulWidget {
   const HomeStage({super.key});
 
@@ -147,87 +149,29 @@ class _HomeStageState extends State<HomeStage> {
               const SizedBox(
                 height: 10,
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.yellow.shade800,
-                          borderRadius: BorderRadius.circular(8)),
-                      height: 150,
-                      width: 150,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Spanish",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Beginner",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
+                    CourseWidget(
+                      title: "Spanish",
+                      subTitle: "Beginner",
+                      color: Colors.deepOrange,
+                      icon: Icon(Icons.flag),
+                      radius: 35,
                     ),
-                    const SizedBox(
-                      width: 10,
+                    CourseWidget(
+                      title: "English",
+                      subTitle: "Advance",
+                      color: Colors.blue,
+                      icon: Icon(Icons.car_crash),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.green.shade700,
-                          borderRadius: BorderRadius.circular(8)),
-                      height: 150,
-                      width: 150,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Italian",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Advanced",
-                            style: TextStyle(color: Colors.white),
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(8)),
-                      height: 150,
-                      width: 150,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "French",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
+                    CourseWidget(
+                      title: "German",
+                      subTitle: "Intermediate",
+                      color: Colors.pink,
+                      icon: Icon(Icons.countertops),
                     ),
                   ],
                 ),
