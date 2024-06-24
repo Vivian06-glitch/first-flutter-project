@@ -70,7 +70,7 @@ class _HomeTabState extends State<HomeTab> {
             const Row(
               children: [
                 Text(
-                  "Categories",
+                  "Categorie",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
