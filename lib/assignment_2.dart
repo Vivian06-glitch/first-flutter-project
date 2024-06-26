@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 import 'course_widget.dart';
 
@@ -10,13 +11,24 @@ class HomeStage extends StatefulWidget {
 }
 
 class _HomeStageState extends State<HomeStage> {
+  TextEditingController controller = TextEditingController(text: "");
+  String thisText = "";
+  int pinLength = 4;
+  bool hasError = false;
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: const Icon(Icons.menu_outlined),
-        title: const Text(""),
+        title: const Text("App Bar"),
         actions: [
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -70,6 +82,43 @@ class _HomeStageState extends State<HomeStage> {
               const Text(
                 "Welcome Back!",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              PinCodeTextField(
+                autofocus: true,
+                controller: controller,
+                hideCharacter: false,
+                highlight: true,
+                highlightColor: Colors.teal,
+                defaultBorderColor: Colors.black,
+                hasTextBorderColor: Colors.green,
+                highlightPinBoxColor: Colors.orange,
+                maxLength: pinLength,
+                hasError: hasError,
+                maskCharacter: "*",
+                onTextChanged: (text) {
+                  setState(() {
+                    hasError = false;
+                  });
+                },
+                onDone: (text) {
+                  print("DONE $text");
+                  print("DONE CONTROLLER ${controller.text}");
+                },
+                pinBoxWidth: 50,
+                pinBoxHeight: 64,
+                hasUnderline: false,
+                wrapAlignment: WrapAlignment.spaceAround,
+                pinBoxDecoration:
+                    ProvidedPinBoxDecoration.defaultPinBoxDecoration,
+                pinTextStyle: const TextStyle(fontSize: 22.0),
+                pinTextAnimatedSwitcherTransition:
+                    ProvidedPinBoxTextAnimation.scalingTransition,
+//                    pinBoxColor: Colors.green[100],
+                pinTextAnimatedSwitcherDuration: const Duration(milliseconds: 300),
+//                    highlightAnimation: true,
+                highlightAnimationBeginColor: Colors.black,
+                highlightAnimationEndColor: Colors.white12,
+                keyboardType: TextInputType.number,
               ),
               const SizedBox(
                 height: 10,
@@ -163,7 +212,7 @@ class _HomeStageState extends State<HomeStage> {
                     ),
                     CourseWidget(
                       title: "English",
-                      subTitle: "Advance",
+                      subTitle: "Advanced",
                       color: Colors.blue,
                       icon: Icon(Icons.car_crash),
                     ),
