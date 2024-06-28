@@ -7,7 +7,8 @@ class CourseWidget extends StatelessWidget {
     this.title,
     this.subTitle,
     this.color,
-    this.icon, this.radius,
+    this.icon,
+    this.radius,
   });
 
   final String? title;
@@ -23,22 +24,22 @@ class CourseWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       height: 150,
       width: 170,
-      decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(radius??8)),
+      decoration: BoxDecoration(
+          color: color, borderRadius: BorderRadius.circular(radius ?? 8)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            title!,
+            title??"",
             style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
           const Gap(10),
           Text(
-            subTitle!,
+            subTitle??"",
             style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
           ),
           const Gap(10),
-         icon!,
+          icon!,
         ],
       ),
     );
