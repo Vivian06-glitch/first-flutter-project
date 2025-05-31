@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/widget_101.dart';
 
 import 'assignment.dart';
 import 'assignment_2.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
         useMaterial3: true,
       ),
-      home: const  HomeStage ()
+      home: const  Widget101()
     );
   }
 }
